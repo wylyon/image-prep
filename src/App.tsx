@@ -7,11 +7,12 @@ import ReactCrop, {
   PixelCrop,
   convertToPixelCrop,
 } from "react-image-crop";
+
 import { canvasPreview } from "./canvasPreview";
 import { useDebounceEffect } from "./useDebounceEffect";
+import sharp from "sharp";
 
 import "react-image-crop/dist/ReactCrop.css";
-
 // This is to demonstate how to make and center a % aspect crop
 // which is a bit trickier so we use some helper functions.
 function centerAspectCrop(
@@ -56,6 +57,8 @@ export default function App() {
       reader.readAsDataURL(e.target.files[0]);
     }
   }
+
+  async function handleBlurClick() {}
 
   async function handleUpdateImageClick() {
     const image = imgRef.current;
@@ -214,6 +217,9 @@ export default function App() {
             disabled={!imgSrc}
             onChange={(e) => setScale(Number(e.target.value))}
           />
+        </div>
+        <div>
+          <button onClick={handleBlurClick}>Blur Image</button>
         </div>
         <div>
           <button onClick={handleUpdateImageClick}>Update Image</button>
