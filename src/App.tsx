@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = "AIzaSyDx292l1QMw5Dr366j32LDHaHFQFBer9SI";
+const API_KEY = "";
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 const FloorplanCleaner: React.FC = () => {
